@@ -57,8 +57,9 @@ h1, h2, h3, h4, h5, h6 {
 /*
  * Footer
  */
-.blog-footer {
-  padding: 2.5rem 0;
+ 
+/* .blog-footer {
+  padding: 0.5rem 0;
   color: #727272;
   text-align: center;
   background-color: #f9f9f9;
@@ -66,4 +67,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 .blog-footer p:last-child {
   margin-bottom: 0;
+} */
+
+/* 1. Make the body take up the full height of the screen */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
 }
+
+/* 2. Target the main content container and tell it to grow */
+/* This pushes the footer down */
+.container {
+  flex: 1;
+}
+
+.blog-footer {
+  padding: 0.45rem 0; 
+  color: #727272;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: .07rem solid #e5e5e5;
+}
+
+.blog-footer p:last-child {
+  margin-bottom: 0;
+} 
