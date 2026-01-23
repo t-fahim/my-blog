@@ -1,25 +1,38 @@
 /* stylelint-disable selector-list-comma-newline-after */
 
+/* =========================
+   Header
+========================= */
+
 .blog-header {
   border-bottom: 1px solid #e5e5e5;
 }
 
 .blog-header-logo {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
-  font-size: 2.25rem;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 2.5rem;
+  font-weight: 800; 
+  line-height: 1;
 }
 
 .blog-header-logo:hover {
   text-decoration: none;
 }
 
+/* =========================
+   Typography
+========================= */
+
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
 }
 
+/* Bootstrap 5 keeps .display-* but sizes changed.
+   Overriding safely */
 .display-4 {
   font-size: 2.5rem;
 }
+
 @media (min-width: 768px) {
   .display-4 {
     font-size: 3rem;
@@ -30,50 +43,55 @@ h1, h2, h3, h4, h5, h6 {
   color: #000 !important;
 }
 
+/* =========================
+   Layout Helpers
+========================= */
+
+/* BS5 already uses flex utilities, but keeping for legacy use */
 .flex-auto {
   flex: 0 0 auto;
 }
 
-.h-250 { height: 250px; }
-@media (min-width: 768px) {
-  .h-md-250 { height: 250px; }
+.h-250 {
+  height: 250px;
 }
 
-/* Pagination */
+@media (min-width: 768px) {
+  .h-md-250 {
+    height: 250px;
+  }
+}
+
+/* =========================
+   Pagination
+========================= */
+
 .blog-pagination {
   margin-bottom: 4rem;
 }
 
-/*
- * Blog posts
- */
+/* =========================
+   Blog Posts
+========================= */
+
 .blog-post {
   margin-bottom: 4rem;
 }
+
 .blog-post-title {
   font-size: 2.5rem;
 }
+
 .blog-post-meta {
   margin-bottom: 1.25rem;
   color: #727272;
 }
 
-/*
- * Footer
- */
- 
-/* .blog-footer {
-  padding: 0.5rem 0;
-  color: #727272;
-  text-align: center;
-  background-color: #f9f9f9;
-  border-top: .05rem solid #e5e5e5;
-}
-.blog-footer p:last-child {
-  margin-bottom: 0;
-} */
+/* =========================
+   Sticky Footer (BS5 Friendly)
+========================= */
 
-/* 1. Make the body take up the full height of the screen */
+/* Make body full height */
 body {
   display: flex;
   flex-direction: column;
@@ -81,20 +99,26 @@ body {
   margin: 0;
 }
 
-/* 2. Target the main content container and tell it to grow */
-/* This pushes the footer down */
+/* Allow main container to grow */
 .container {
   flex: 1;
 }
 
+/* =========================
+   Footer
+========================= */
+
 .blog-footer {
-  padding: 0.45rem 0; 
+  padding: 0.75rem 0;
   color: #727272;
   text-align: center;
   background-color: #f9f9f9;
-  border-top: .07rem solid #e5e5e5;
+  border-top: 0.07rem solid #e5e5e5;
 }
 
 .blog-footer p:last-child {
   margin-bottom: 0;
-} 
+}
+
+
+
