@@ -30,12 +30,13 @@
             </div>
 
             <div class="col-6 col-md-auto flex-grow-1">
-                <form action="" method="GET">
+                <form action="{% url 'search' %}" method="GET">
                     <div class="input-group input-group-sm">
                         <input class="form-control"
                            type="text"
                            name="keyword"
-                           placeholder="Search..."
+                           value="{{ keyword }}"
+                           placeholder="Search ..."
                            aria-label="Search">
                         <button type="submit" class="btn btn-warning" id="button-search">Go!</button>
                     </div>

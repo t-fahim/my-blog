@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="blog-post-title text-warning mb-4">
+    Search Term - {{ keyword }}
+</h2>
+
+<!-- Other Posts -->
+<div class="row mb-2">
+
+    {% if blogs %}
+        {% for blog in blogs %}
+        <div class="col-md-6 mb-3">
+            <div class="card border-0 h-100">
+              <div class="card-body">
+                <h3><a href="{% url 'blog' blog.slug %}" class="text-black">{{ blog.title }}</a></h3>
+                <small class="mb-1 text-muted">{{blog.created_at | timesince}} ago | {{blog.author}}</small>
+                <p class="card-text">{{ blog.short_description | truncatechars:50 }}</p>
+              </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    {% else %}
+        <p class="blog-post-title text-muted">
+            No posts found in for search !!!
+        </p>
+    {% endif %}
+
+</div>
+
+{% endblock content %}
+
+
