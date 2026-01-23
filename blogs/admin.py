@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Categories, Blogs
+from .models import Category, Blog
 
 
 class BlogAdmin(admin.ModelAdmin):
@@ -8,5 +8,5 @@ class BlogAdmin(admin.ModelAdmin):
     search_fields = ('id','title','category__category_name','status','author__username',)
     list_editable = ('is_featured','status',)
 
-admin.site.register(Categories)
-admin.site.register(Blogs,BlogAdmin)
+admin.site.register(Category)
+admin.site.register(Blog, BlogAdmin)

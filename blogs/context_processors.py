@@ -1,8 +1,8 @@
-from .models import Categories
+from .models import Category
 from about.models import SocialLink
 
 def get_categories(request):
-    categories = Categories.objects.all()
+    categories = Category.objects.all()
     return dict(categories=categories)
 
 

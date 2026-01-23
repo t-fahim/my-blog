@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from blogs.models import Categories, Blogs
+from blogs.models import Category, Blog
 from about.models import About
 from .forms import Registration_form
 from django.contrib.auth.forms import AuthenticationForm
@@ -8,10 +8,10 @@ from django.contrib import auth
 
 def home(request):
     # categories = Categories.objects.all()
-    featured_posts = Blogs.objects.filter(is_featured = True, status='Published').order_by('-updated_at')
-    posts = Blogs.objects.filter(is_featured=False, status='Published').order_by('-updated_at')
+    featured_posts = Blog.objects.filter(is_featured = True, status='Published').order_by('-updated_at')
+    posts = Blog.objects.filter(is_featured=False, status='Published').order_by('-updated_at')
     try:
-        about = About.objects.get()
+        about = About.objects.first()
     except:
         about = None
     context = {
