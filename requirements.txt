@@ -1,6 +1,13 @@
-asgiref==3.11.0
-crispy-bootstrap4==2025.6
-Django==6.0.1
-django-crispy-forms==2.5
-pillow==12.1.0
-sqlparse==0.5.5
+# Core Framework (Using 5.1 for modern features, or 4.2 for LTS)
+Django>=5.1,<5.2
+
+# Database and Utilities
+asgiref>=3.8.1
+sqlparse>=0.5.1
+
+# Forms Styling
+django-crispy-forms>=2.3
+crispy-bootstrap5>=2024.10
+
+# Image Handling
+Pillow>=10.4.0
