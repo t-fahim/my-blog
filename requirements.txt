@@ -1,13 +1,13 @@
-# Core Framework (Using 5.1 for modern features, or 4.2 for LTS)
+# Core Framework
 Django>=5.1,<5.2
 
-# Database and Utilities
-asgiref>=3.8.1
-sqlparse>=0.5.1
-
-# Forms Styling
+# Forms & Styling (Bootstrap 5)
 django-crispy-forms>=2.3
 crispy-bootstrap5>=2024.10
 
-# Image Handling
+# Image Processing (For your Blog featured images)
 Pillow>=10.4.0
+
+# Database Utilities
+asgiref>=3.8.1
+sqlparse>=0.5.1
