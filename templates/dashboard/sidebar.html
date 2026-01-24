@@ -4,7 +4,7 @@
     Welcome back, <span class="text-warning">{{ user }}</span>
 </h2>
 
-<div class="col-md-3">
+<div class="col-md-2">
     <div class="nav flex-column nav-pills bg-light" aria-orientation="vertical">
         <a href="{% url 'dashboard' %}" class="nav-link text-dark {% if request.resolver_match.url_name == 'dashboard' %}bg-warning{% endif %}">
             Dashboard
@@ -12,7 +12,7 @@
         <a href="{% url 'categories' %}"class="nav-link text-dark {% if request.resolver_match.url_name == 'categories' %}bg-warning{% endif %}">
             Categories
         </a>
-        <a href="{% url 'dashboard' %}" class="nav-link text-dark {% if request.resolver_match.url_name == 'dashboard' %}bg-warning{% endif %}">
+        <a href="{% url 'posts' %}" class="nav-link text-dark {% if request.resolver_match.url_name == 'posts' %}bg-warning{% endif %}">
             Posts
         </a>
         <a href="{% url 'categories' %}"class="nav-link text-dark {% if request.resolver_match.url_name == 'categories' %}bg-warning{% endif %}">

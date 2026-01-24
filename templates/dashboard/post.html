@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- -->
+<div class="row">
+    <!-- left side bar -->
+    <!-- load side bar here -->
+    {% include "dashboard/sidebar.html" %}
+
+    <!-- right side content-->
+    <div class="col-md-10">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h4 class="mb-0">All posts</h4>
+        <a href="{% url 'add_post' %}" class="btn btn-dark text-light">Add New</a>
+      </div>
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col" class="text-center">Title</th>
+            <th scope="col" class="text-center">Category</th>
+            <th scope="col" class="text-center">Author</th>
+            <th scope="col" class="text-center">Status</th>
+            <th scope="col" class="text-center">Featured</th>
+            <th scope="col" class="text-center">Created At</th>
+            <th scope="col" class="text-center">Updated At</th>
+            <th scope="col" class="text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for post in posts %}
+          <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td class="text-center">{{ post.title |truncatechars:20 }}</td>
+            <td class="text-center">{{ post.category }}</td>
+            <td class="text-center">{{ post.author }}</td>
+            <td class="text-center">{{ post.status }}</td>
+            <td class="text-center">{% if post.is_featured %}<i class="fa-solid fa-check"></i>{% else %}<i class="fa-solid fa-square-xmark"></i>{% endif %}</td>
+            <td class="text-center">{{ post.created_at|date:"M d, Y" }}</td>
+            <td class="text-center">{{ post.updated_at|date:"M d, Y" }}</td>
+            <td class="text-center">
+              <a href="{% url 'edit_post' post.id %}"><i class="fa-solid fa-pen-to-square"></i></a>&nbsp&nbsp
+              <a href="{% url 'delete_post' post.id%}"><i class="fa-solid fa-trash text-danger"></i></a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock content %}

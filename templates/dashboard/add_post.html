@@ -11,11 +11,11 @@
 
     <!-- right side content-->
     <div class="col-md-10">
-        <h4>ADD Categories</h4>
-        <form action="{% url 'add_category' %}" method="POST" style="width: 300px;">
+        <h4>Add New Post</h4>
+        <form action="{% url 'add_post' %}" method="POST" enctype="multipart/form-data" style="width: auto;">
             {% csrf_token %}
-            {{ Category_form | crispy }} <br>
-            <button type="submit" class="btn btn-warning">ADD</button>
+            {{ blog_post_form | crispy }} <br>
+            <button type="submit" class="btn btn-warning">Submit</button>
         </form>
         
     </div>
