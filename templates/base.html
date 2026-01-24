@@ -17,10 +17,13 @@
 
     <!-- Custom CSS -->
     <link href="{% static 'css/blog.css' %}" rel="stylesheet">
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
 </head>
 
-<body>
-<div class="container">
+<body class="d-flex flex-column min-vh-100">
+<div class="container flex-grow-1">
 
     <!-- Header -->
     <header class="blog-header py-3">
@@ -48,7 +51,7 @@
                 <a class="btn btn-sm btn-warning me-2" href="{% url 'login' %}">Login</a>
                 <a class="btn btn-sm btn-outline-secondary" href="{% url 'register' %}">Register</a>
                 {% else %}
-                <a href="#" class="text-dark text-decoration-none fw-bold small me-1" style="letter-spacing: 1px;">{{ user }}</a>
+                <a href="{% url 'dashboard' %}" class="text-dark text-decoration-none fw-bold small me-1" style="letter-spacing: 1px;">{{ user }}</a>
                 <a class="btn btn-sm btn-outline-secondary" href="{% url 'logout' %}">logout</a>
                 {% endif %}
             </div>
