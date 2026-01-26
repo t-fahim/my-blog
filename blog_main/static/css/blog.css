@@ -9,11 +9,12 @@
 }
 
 .blog-header-logo {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: 2.5rem;
-  font-weight: 800; 
-  line-height: 1;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif; /* Elegant serif font */
+  font-size: 2.5rem;   /* Large size for prominence */
+  font-weight: 900;    /* Extra bold */
+  line-height: 1;      /* Keeps the logo tight vertically */
 }
+
 
 .blog-header-logo:hover {
   text-decoration: none;
