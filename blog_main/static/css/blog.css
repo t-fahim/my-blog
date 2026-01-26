@@ -24,9 +24,44 @@
    Typography
 ========================= */
 
+/* Headings - elegant serif */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-weight: 700; /* bold headings */
+  line-height: 1.2;
 }
+
+/* Body text - clean and readable sans-serif */
+body, p, li, a, span {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem; /* 16px default */
+  line-height: 1.6; /* comfortable line spacing */
+  color: #212529; /* default text color */
+}
+
+/* Short description (intro) */
+.blog-short-description {
+    font-family: "Open Sans", Arial, sans-serif; /* clean and readable */
+    font-size: 1.25rem; /* slightly larger for intro */
+    line-height: 1.8;   /* comfortable spacing */
+    color: #333;        /* soft black */
+    margin-bottom: 1.5rem;
+}
+
+/* Blog body */
+.blog-body {
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 1.125rem; /* 18px approx */
+    line-height: 1.8;    /* very readable for long paragraphs */
+    color: #333;         /* easy on the eyes */
+    margin-bottom: 2rem; /* spacing after content */
+}
+
+/* Optional: spacing between paragraphs inside blog body */
+.blog-body p {
+    margin-bottom: 1.5rem;
+}
+
 
 /* Bootstrap 5 keeps .display-* but sizes changed.
    Overriding safely */
@@ -121,5 +156,37 @@ body {
   margin-bottom: 0;
 }
 
+/* Headline */
+.hero-title {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-size: 2.5rem; /* bigger and readable */
+    font-weight: 900;
+    line-height: 1.2;
+    color: #ffffff; /* white text for all backgrounds */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* subtle shadow for readability */
+}
+
+/* Short description */
+.hero-desc {
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #f8f9fa; /* light text for contrast */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Continue reading link */
+.hero-link {
+    font-family: "Open Sans", Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #ffc107; /* bright yellow for contrast */
+    text-decoration: none;
+}
+
+.hero-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
 
 

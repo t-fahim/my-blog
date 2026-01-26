@@ -12,20 +12,27 @@
         background-position: center;
      ">
     <div class="col-md-8 px-0">
-        <h1 class="display-4 fst-italic">
+        <div class="blog-hero position-relative text-center text-md-start mb-5">
+    <!-- Optional overlay -->
+    <div class="overlay position-absolute top-0 start-0 w-100 h-100"></div>
+
+    <div class="hero-text position-relative p-4">
+        <h1 class="display-4 fst-italic hero-title">
             {{ post.title }}
         </h1>
 
-        <p class="lead my-3">
+        <p class="lead hero-desc my-3">
             {{ post.short_description|truncatewords:80 }}
         </p>
 
         <p class="lead mb-0">
-            <a href="{% url 'blog' post.slug %}"
-               class="text-white fw-bold text-decoration-none">
+            <a href="{% url 'blog' post.slug %}" class="hero-link">
                 Continue reading . . .
             </a>
         </p>
+    </div>
+</div>
+
     </div>
 </div>
   {% endif %}
