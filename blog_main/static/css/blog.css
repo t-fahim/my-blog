@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Body text - clean and readable sans-serif */
-body, p, li, a, span {
+body, p, li, a span{
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem; /* 16px default */
   line-height: 1.6; /* comfortable line spacing */
@@ -189,4 +189,9 @@ body {
     text-decoration: underline;
 }
 
+.username {
+  font-weight: 700; 
+  color: #ffc107;   /* bg-warning-color */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* clean modern sans-serif */
+}
 
