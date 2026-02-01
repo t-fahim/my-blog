@@ -1,6 +1,6 @@
 from django.shortcuts import render,get_object_or_404, redirect
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Blog, Category, Comment
+from .models import Blog, Category, Comment, AboutMe, SocialProfile
 from django.db.models import Q
 
 # Create your views here.
@@ -40,6 +40,12 @@ def posts_by_category(request,category_id):
 
 def blog(request,slug):
     single_blog = get_object_or_404(Blog, slug=slug, status="Published")
+    # author social link
+    social_links = SocialProfile.objects.filter(user = single_blog.author)
+    # author about me
+    about = getattr(single_blog.author, 'aboutme', None)
+    # print(about)
+    # print(social_links)
     if request.method == 'POST':
         comment = Comment()
         comment.user = request.user
@@ -55,7 +61,9 @@ def blog(request,slug):
     context = {
         'single_blog':single_blog,
         'comments':comments,
-        'comments_count':comments_count
+        'comments_count':comments_count,
+        'social_links':social_links,
+        'about':about,
     }
     return render(request, 'blog.html', context=context)
 

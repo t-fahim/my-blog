@@ -6,7 +6,6 @@
 
     <!-- ROW 1: Title + Image + Sidebar -->
     <div class="row">
-
         <!-- Blog Header + Image -->
         <div class="col-lg-9">
             <article>
@@ -37,23 +36,22 @@
 
         <!-- Sidebar -->
         <div class="col-lg-3">
-            <div class="mb-5"></div>
             <!-- Categories widget -->
             <div class="card mb-3 p-3">
                 <h4 class="font-italic">Categories</h4>
                 <div class="card-body">
                     <div class="row">
-                        {% for category in categories %}
+                        {% for category in categories|slice:":8" %}
                             <div class="col-sm-6">
                                 <ul class="list-unstyled mb-0">
                                     <li>
                                         <a href="{% url 'posts_by_category' category.id %}" class="text-dark">
-                                            {{ category.category_name|truncatechars:8 }}
+                                        {{ category.category_name|truncatechars:8 }}
                                         </a>
                                     </li>
                                 </ul>
                             </div>
-                        {% empty %}
+                            {% empty %}
                             <div class="col-12">
                                 <p>No categories found.</p>
                             </div>
@@ -62,19 +60,30 @@
                 </div>
             </div>
 
+            <!-- Social Links widget -->
             {% if social_links %}
             <div class="card mb-4 p-3">
                 <h4 class="font-italic">Follow Me</h4>
                 <ol class="list-unstyled">
-                    {% for social_link in social_links %}
-                        <li>
-                            <a href="{{ social_link.link }}" target="_blank">
-                                {{ social_link.platform }}
-                            </a>
-                        </li>
-                    {% endfor %}
+                {% for social_link in social_links|slice:":3" %}
+                    <li>
+                        <a href="{{ social_link.link }}" target="_blank">
+                            {{ social_link.platform }}
+                        </a>
+                    </li>
+                {% endfor %}
                 </ol>
             </div>
+            {% endif %}
+
+            <!-- About Me widget -->
+            {% if about %}
+                <div class="card mb-4 p-3 text-center">
+                    <h4 class="font-italic">{{ about.about_heading }}</h4>
+                    <div class="">
+                        <p class="small">{{ about.about_description|truncatechars:256 }}</p>
+                    </div>
+                </div>
             {% endif %}
 
         </div>

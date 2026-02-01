@@ -50,4 +50,26 @@ class Comment(models.Model):
     
 
 
+class AboutMe(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    about_heading = models.CharField(max_length=30)
+    about_description = models.TextField(max_length=256)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'aboutme'
+
+    def __str__(self):
+        return self.about_heading
     
+
+class SocialProfile(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    platform = models.CharField(max_length=30)
+    link = models.URLField(max_length=200)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.platform
